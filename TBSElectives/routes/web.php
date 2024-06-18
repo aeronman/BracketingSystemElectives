@@ -2,10 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('dbconn', function () {
+
+Route::get('/', function () {
     return view('dbconn');
 });
