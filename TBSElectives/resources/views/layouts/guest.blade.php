@@ -7,6 +7,8 @@
 
         <title>Tournament Bracketing System</title>
 
+        <link rel="shortcut icon" href="TBSfavicon.ico" type="image/x-icon">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -19,7 +21,7 @@
             <div>
                 <a href="/">
                     <!--add LOGO here-->
-                    <img src="/path/to/your/logo.png" alt="Logo" class="w-20 h-20">
+                    <img src="{{ asset('images/TBS.png') }}" alt="Logo" alt="Logo" class="w-20 h-20">
                 </a>
             </div>
 

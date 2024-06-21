@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tournament Bracketing System</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="TBSfavicon.ico" type="image/x-icon">
 </head>
-<body class="font-sans text-gray-900 antialiased bg-gray-900 min-h-screen flex flex-col">
+<body class="font-sans text-white antialiased bg-gray-900 min-h-screen flex flex-col">
     @if (Route::has('login'))
     <nav class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,7 +15,7 @@
                 <div class="flex">
                     <div class="shrink-0 flex items-center">
                         <!--Add logo here-->
-                        <img src="/path/to/your/logo.png" alt="Logo" class="h-8 w-8">
+                        <img src="{{ asset('images/TBS.png') }}" alt="Logo" class="h-20 w-20">
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -39,10 +40,12 @@
     @endif
 
     <!-- Main content -->
-    <main class="flex-grow">
-        <!-- Your main content goes here -->
-         <img src="https://images.pexels.com/photos/3839696/pexels-photo-3839696.jpeg">
-
+    <main class="flex-grow box-border flex flex-col items-center justify-center px-4">
+        <h1 class="text-4xl font-bold mb-4">Tournament Bracketing System</h1>
+        <p class="text-lg mb-6 text-center">Welcome to the ultimate tournament bracketing system. Organize, manage, and track your tournaments with ease and efficiency.</p>
+        <a href="{{ route('register') }}" class="border-2 hover:border-gray-600 hover:text-gray-600 text-white font-bold py-2 px-4 rounded">
+            Join Now
+        </a>
     </main>
 
     <!-- Footer -->

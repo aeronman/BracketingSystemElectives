@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 //HomeController
 use App\Http\Controllers\HomeController;
 
+//TournamentController
+use App\Http\Controllers\TournamentController;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,4 +29,6 @@ require __DIR__.'/auth.php';
 
 //route for the homecontroller for Admin Dashboard
 
-Route::get('admin/dashboard', [HomeController::class,'index'])->Middleware(['auth', 'admin']);
+Route::get('admin/dashboard', [HomeController::class,'index'])->Middleware(['auth', 'admin'])->name('admindashboard');
+
+//route for the join tournament
