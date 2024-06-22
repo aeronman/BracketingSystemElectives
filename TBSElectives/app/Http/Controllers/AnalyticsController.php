@@ -7,7 +7,7 @@ use App\Models\Team;
 use App\Models\Player;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class AnalyticsController extends Controller
 {
     //
 
