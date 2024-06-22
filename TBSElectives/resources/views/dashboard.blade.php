@@ -12,7 +12,7 @@
                     {{ __("You're logged in!") }}
                     <!-- Navigation links -->
                     <div class="mt-4">
-                        <!-- Temporary Added analytics nav page below "logged in page" -->
+                        <!-- Added analytics nav page below "logged in page" -->
                         <a href="{{ route('analytics') }}"
                             class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-700">
                             Analytics
