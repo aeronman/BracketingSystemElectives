@@ -23,7 +23,7 @@
                 <h3 class="text-lg font-semibold mt-8 mb-4">Player Performance</h3>
                 <canvas id="playerPerformanceChart" style="height: 300px;"></canvas>
 
-                <ul class="list-disc list-inside">
+                <ul class="list-disc list-inside" id="playerPerformanceData">
                     <li>Player A - 10 wins, 2 losses</li>
                     <li>Player B - 8 wins, 4 losses</li>
                     <li>Player C - 6 wins, 6 losses</li>
@@ -32,16 +32,16 @@
 
                 <!-- Shows Top Scoring Each Player -->
                 <h3 class="text-lg font-semibold mt-8 mb-4">Top Scorers</h3>
-                <ul class="list-disc list-inside">
+                <ul class="list-disc list-inside" id="topScorersData">
                     <li>Player A - 150 points</li>
                     <li>Player B - 130 points</li>
                     <li>Player C - 120 points</li>
                     <!-- Replace with dynamic data if available -->
                 </ul>
 
-                <!-- Shows Highest Viewed Maches -->
+                <!-- Shows Highest Viewed Matches -->
                 <h3 class="text-lg font-semibold mt-8 mb-4">Most Viewed Matches</h3>
-                <ul class="list-disc list-inside">
+                <ul class="list-disc list-inside" id="mostViewedMatchesData">
                     <li>Match 1: Player A vs Player B - 1000 views</li>
                     <li>Match 2: Player C vs Player D - 850 views</li>
                     <li>Match 3: Player E vs Player F - 700 views</li>
@@ -56,12 +56,12 @@
     <!-- to get Graphic Chart, Pie or Line -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var ctx = document.getElementById('tournamentStatsChart').getContext('2d');
-            var tournamentStatsChart = new Chart(ctx, {
-                type: 'bar', // or 'line', 'pie', etc.
+            // Overall Tournament Stats Chart
+            var ctxStats = document.getElementById('tournamentStatsChart').getContext('2d');
+            var tournamentStatsChart = new Chart(ctxStats, {
+                type: 'bar',
                 data: {
                     labels: ['Total Matches', 'Total Players', 'Total Points', 'Average Points per Match'],
                     datasets: [{
@@ -91,6 +91,7 @@
                 }
             });
 
+            // Matches Per Round Chart
             var ctxMatches = document.getElementById('matchesPerRoundChart').getContext('2d');
             var matchesPerRoundChart = new Chart(ctxMatches, {
                 type: 'line',
@@ -112,28 +113,37 @@
                     }
                 }
             });
-        });
 
-        var ctxMatches = document.getElementById('playerPerformance').getContext('2d');
-        var matchesPerRoundChart = new Chart(ctxMatches, {
-            type: 'line',
-            data: {
-                labels: ['Player A', 'Player B', 'Player C'],
-                datasets: [{
-                    label: 'Player Performance',
-                    data: [16, 8, 4, 2, 1], // Example data
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+            // Player Performance Chart
+            var ctxPerformance = document.getElementById('playerPerformanceChart').getContext('2d');
+            var playerPerformanceChart = new Chart(ctxPerformance, {
+                type: 'pie',
+                data: {
+                    labels: ['Player A', 'Player B', 'Player C'],
+                    datasets: [{
+                        label: 'Player Performance',
+                        data: [10, 8, 6], // Example data
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
+            });
         });
     </script>
 </x-app-layout>
