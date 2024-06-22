@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+//Analytics Controller
+use App\Http\Controllers\AnalyticsController;
 //HomeController
 use App\Http\Controllers\HomeController;
 
@@ -34,4 +36,8 @@ Route::get('admin/dashboard', [HomeController::class, 'index'])->Middleware(['au
 //route for the join tournament
 
 // Analytics route
-Route::get('/analytics', [AnalyticsController::class, 'showAnalytics'])->middleware('auth')->name('analytics');
+Route::get('/analytics', [
+    AnalyticsController::class, 'showAnalytics'
+])
+    ->middleware('auth')
+    ->name('analytics');

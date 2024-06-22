@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Team;
-use App\Models\Player;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class AnalyticsController extends Controller
 {
-    //
-
-    public function index()
+    // request for analytics view
+    public function showAnalytics(Request $request): View
     {
-        return view('admin/analytics');
+        return view('admin.analytics');
     }
 }
