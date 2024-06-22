@@ -24,11 +24,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 
 //route for the homecontroller for Admin Dashboard
 
-Route::get('admin/dashboard', [HomeController::class,'index'])->Middleware(['auth', 'admin'])->name('admindashboard');
+Route::get('admin/dashboard', [HomeController::class, 'index'])->Middleware(['auth', 'admin'])->name('admindashboard');
 
 //route for the join tournament
+
+// Analytics route
+Route::get('/analytics', [AnalyticsController::class, 'showAnalytics'])->middleware('auth')->name('analytics');
