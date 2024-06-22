@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\MatchController;
+use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TreeController;
 use Illuminate\Support\Facades\Route;
 
 //Analytics Controller
@@ -24,6 +27,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('participants', ParticipantController::class);
+    Route::resource('tournaments', TournamentController::class);
+    Route::resource('matches', MatchController::class);
+    Route::get('tournament-tree', [TreeController::class, 'showTree'])->name('tournament.tree');
+
 });
 
 require __DIR__ . '/auth.php';
