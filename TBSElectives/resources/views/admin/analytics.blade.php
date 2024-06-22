@@ -13,15 +13,16 @@
 
                 <!-- Shows Overall Stats -->
                 <h3 class="text-lg font-semibold mb-4">Overall Tournament Stats</h3>
-                <canvas id="tournamentStatsChart" style="height: 300px;"></canvas>
+                <canvas id="tournamentStatsChart"
+                    style="height: 250px; background-color:rgba(228, 235, 141, 0.644);"></canvas>
 
                 <!-- Shows Number of Match Stats -->
                 <h3 class="text-lg font-semibold mt-8 mb-4">Number of Matches Per Round</h3>
-                <canvas id="matchesPerRoundChart" style="height: 300px;"></canvas>
+                <canvas id="matchesPerRoundChart" style="height: 250px;"></canvas>
 
                 <!-- Shows list of Player Performance -->
                 <h3 class="text-lg font-semibold mt-8 mb-4">Player Performance</h3>
-                <canvas id="playerPerformanceChart" style="height: 300px;"></canvas>
+                <canvas id="playerPerformanceChart" style="height: 250px;"></canvas>
 
                 <ul class="list-disc list-inside" id="playerPerformanceData">
                     <li>Player A - 10 wins, 2 losses</li>
